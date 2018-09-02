@@ -1,0 +1,45 @@
+body{
+    background-color:white;
+    color: whitesmoke;
+}
+
+.menuItem{
+    background-color: rgb(39, 103, 0);
+    width: 200px;
+    height: 100px;
+    float: left;
+    margin: 2px;
+}
+
+     .image {
+        grid-area: image;
+        background-color: black;
+        height: 400px;
+        }
+
+    .image-m {
+            grid-area: image-m;
+            background-color: blue;
+            height: 200px;
+         }
+    
+    .footer {
+        grid-area: footer;
+        background-color: red;
+        height: 50px;
+      }
+      
+      .container {
+        display: grid;
+        width: 100%;
+        height: 800px;
+        grid-template-columns: 1fr 300px 300px 300px 300px 1fr;
+        grid-template-rows:auto;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        grid-template-areas: 
+          ". image image imaage image ."
+          "- image-m image-m image-m image-m ."
+          "footer footer footer footer";
+        
+      }
