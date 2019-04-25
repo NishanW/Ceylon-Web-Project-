@@ -1,0 +1,152 @@
+
+body {
+    opacity: 1;
+    transition: 1s opacity;
+    text-align: center;
+    background-color:#333;
+    min-width:600px;
+    margin:0px;
+    padding:0px;
+    font-family: 'Courier New', Courier, monospace;
+}
+    
+body.fade-out {    
+        opacity: 0;
+        transition: none;
+}
+
+.container {
+    display:grid;
+    width:100%;
+    height:100%;
+    grid-template-columns:100%;
+    grid-template-rows:1fr 300px 1fr 1fr;
+    grid-row-gap: 20px;
+    grid-template-areas: "mainView"
+    "strip"
+    "flex"
+    "footer";
+}
+
+.mainView {
+    grid-area: mainView;
+    max-width: 1920px;
+    width:100%;
+    height:auto;
+}
+
+.strip {
+    grid-area:strip;
+    display:grid;
+    width:100%;
+    height:100%;
+    grid-template-columns: auto 30% 20px 30% 20px 30% auto;
+    grid-template-rows:100%;
+    grid-template-areas:". dest_0 . dest_1 . dest_2 .";
+}
+
+.flex {
+    grid-area:flex;
+    display:grid;
+    width:100%;
+    height:100%;
+    grid-template-columns: auto 30% 20px 30% 20px 30% auto;
+    grid-template-rows:100%;
+    grid-template-areas:". dest_0 . dest_1 . dest_2 .";
+}
+
+.dest_0{grid-area: dest_0;}
+.dest_1{grid-area: dest_1;}
+.dest_2{grid-area: dest_2;}
+
+.dest_0, .dest_1, .dest_2{
+    width:100%;
+    height:100%;
+    background-color:white;
+}
+
+.mainView > img, .dest_img > img {
+    width:100%;
+}
+
+.dest_img{
+    width:100%;
+    height:auto;
+}
+
+.footer{
+    position: absolute;
+    grid-area:footer;
+    bottom:0px;
+    height:40px;
+    left:0px;
+    width:100%;
+    color: whitesmoke;
+    background: #333;
+    text-align: center
+}
+
+.header{
+    /*grid-area:header;*/
+    position:fixed;
+    top:0px;
+    left:0px;
+    height:85px;
+    width:100%;
+}
+
+.inner-header{
+    position: absolute;;
+    height:75px;
+    width:600px;
+    background: rgba(51,51,51,0.4);
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*Centered text*/
+.bigTitle {
+    color: whitesmoke;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 42px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+}
+
+.smallTitle {
+    color: yellowgreen;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 36px;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+a {
+    color: black;
+    text-decoration: none;  
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: 0.0} 
+    to {opacity: 1.0}
+  }
+  
+  @keyframes fade {
+    from {opacity: 0.0} 
+    to {opacity: 1.0}
+  }
