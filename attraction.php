@@ -27,7 +27,7 @@
         </div>
         <div class="flex">
             <?php 
-               for ($x = 0; $x <= 2; $x++) {
+               for ($x = 0; $x <= 3; $x++) {
                     echo "<div class='dest_$x'>";
                     echo "<div class='dest_img'>";
                     echo "<img src=$imageArray[$x]>";

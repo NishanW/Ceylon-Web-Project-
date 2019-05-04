@@ -1,53 +1,38 @@
 <?php require_once 'html-header.php';?>
 
-    <div class="container">
-        <div class="mainView fade">
-            <img src="images/Trincobay.jpg" alt="Trinco Bay">
-        </div>
-        <div class="mainView fade">
-            <img src="images/AnpTemples.jpg" alt="Trinco Bay">
-        </div>
-        <div class="mainView fade">
-            <img src="images/Wadduwa.jpg" alt="Trinco Bay">
-        </div>    
+<?php
+    $imageArray = glob("images/home/*.{jpg,png}", GLOB_BRACE);
+?>
 
-        <div class="strip">
-            <div class="dest_0">
-                <div class="dest_img">
-                   <img src="images/Trincobay.jpg" alt="Trinco Bay">
-                </div>
-                <div>
-                    <h2>Trincomalee</h2>
-                </div>
+    <div class="container">
+            <?php
+                foreach ($imageArray as $value) {
+                    echo "<div class='mainView fade'>";
+                    echo "<img src=$value alt=$value>";
+                    echo "</div>";
+                }
+            ?>
+    
+            <div class="flex">
+                <?php 
+                for ($x = 0; $x <= 6; $x++) {
+                        echo "<div class='dest'>";
+                        echo "<div class='dest_img'>";
+                        echo "<img src=$imageArray[$x]>";
+                        echo "</div>";
+                        echo "<div>";
+                        echo "<h2>";
+                        $fileName = basename($imageArray[$x],".jpg");
+                        echo preg_replace('~\d~','',$fileName);
+                        echo "</h2>";
+                        echo "</div>";
+                        echo "</div>";
+                    }      
+                ?>
             </div>
-            <div class="dest_1">
-                <a href="/attraction.php?dest=ANP">
-                <div class="dest_img">
-                    <img src="images/AnpTemples.jpg" alt="Trinco Bay">
-                </div>
-                <div>
-                    <h2>Anuradhapura</h2>
-                </div>
-                </a>
-                </div>
-            <div class="dest_2">
-                <div class="dest_img">
-                    <img src="images/Wadduwa.jpg" alt="Trinco Bay">
-                </div>
-                <div>
-                    <h2 id="#1">West Coast</h2>
-                </div>
-            </div>    
-        </div>
+            <?php require_once 'footer.php';?>
     </div>
 
     <?php require_once 'site-header.php';?>
-    <?php require_once 'footer.php';?>
-          
-    <script>
-        document.addEventListener("DOMContentLoaded", function(e) {
-            document.body.className = '';
-        });
-    </script>
 </body>
 </html>

@@ -1,9 +1,8 @@
-<div class="footer">
-            <?php
-                echo "<p>Copyright &copy; " . date("Y") . " | Pixel Foundry</p>";
-            ?>
-        </div>
-    </div>
+<div class="footer">      
+    <?php
+         echo "<p>Copyright &copy; " . date("Y") . " | Pixel Foundry</p>";
+    ?>
+</div>
     
     <script>
         var slideIndex = 0;
@@ -21,11 +20,9 @@
             setTimeout(showSlides, 5000); // Change image every 2 seconds
         }
     </script>
-          
+      
     <script>
         document.addEventListener("DOMContentLoaded", function(e) {
             document.body.className = '';
         });
     </script>
- </body>
-</html>
