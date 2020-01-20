@@ -22,7 +22,7 @@
     </script>
       
     <script>
-        document.addEventListener("DOMContentLoaded", function(e) {
+        window.addEventListener("load", function(e) {
             document.body.className = '';
         });
     </script>

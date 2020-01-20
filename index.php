@@ -1,7 +1,7 @@
 <?php require_once 'html-header.php';?>
 
 <?php
-    $imageArray = glob("images/home/*.{jpg,png}", GLOB_BRACE);
+    $imageArray = glob("images/home/*.{JPG,jpg,png}", GLOB_BRACE);
 ?>
 
     <div class="container">
@@ -9,13 +9,14 @@
                 foreach ($imageArray as $value) {
                     echo "<div class='mainView fade'>";
                     echo "<img src=$value alt=$value>";
+                   echo "<div id='text'>Sri Lanka will offer free tourist visas to citizens of 48 countries begining August 2019. see wehether you are eligible. Experience Unforgettable holidays, great food!</div>";
                     echo "</div>";
                 }
             ?>
     
             <div class="flex">
                 <?php 
-                for ($x = 0; $x <= 6; $x++) {
+                for ($x = 0; $x < count($imageArray); $x++) {
                         echo "<div class='dest'>";
                         echo "<div class='dest_img'>";
                         echo "<img src=$imageArray[$x]>";

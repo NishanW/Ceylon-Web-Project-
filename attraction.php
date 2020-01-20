@@ -1,6 +1,9 @@
 <?php
     $destination = filter_input(INPUT_GET, 'dest', FILTER_SANITIZE_URL);
     $imageArray = glob("images/".$destination."/*.{jpg,png}", GLOB_BRACE);
+    if (!$imageArray) {
+        $imageArray = glob("images/NotFound/NotFound.JPG", GLOB_BRACE);
+    }
 ?>
 
 <?php require_once 'html-header.php';?>
@@ -16,7 +19,7 @@
         
         <div class="strip">
             <?php 
-                for ($x = 0; $x <= 2; $x++) {
+                for ($x = 0; $x <= 0; $x++) {
                     echo "<div class='dest_$x'>";
                     echo "<div class='dest_img'>";
                     echo "<img src=$imageArray[$x]>";
@@ -27,7 +30,7 @@
         </div>
         <div class="flex">
             <?php 
-               for ($x = 0; $x <= 3; $x++) {
+               for ($x = 0; $x <= 0; $x++) {
                     echo "<div class='dest_$x'>";
                     echo "<div class='dest_img'>";
                     echo "<img src=$imageArray[$x]>";

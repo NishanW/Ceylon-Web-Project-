@@ -11,8 +11,26 @@ body {
 }
     
 body.fade-out {    
-        opacity: 0;
-        transition: none;
+    opacity: 0;
+    transition: none;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: 0.0} 
+    to {opacity: 1.0}
+}
+
+@keyframes fade {
+    from {opacity: 0.0} 
+    to {opacity: 1.0}
 }
 
 .container {
@@ -30,7 +48,7 @@ body.fade-out {
     grid-area: mainView;
     max-width: 1920px;
     width:100%;
-    height:auto;
+    height:100vh;
 }
 
 .flex {
@@ -50,11 +68,7 @@ body.fade-out {
     margin:10px;
 }
 
-.mainView > img, .dest_img > img {
-    width:100%;
-}
-
-.dest_img{
+.dest_img > img, .mainView > img {
     width:100%;
     height:auto;
 }
@@ -118,20 +132,77 @@ a {
     text-decoration: none;  
 }
 
-/* Fading animation */
-.fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
+  .header a {
+    float: right;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    /*height: 75px;*/
   }
   
-  @-webkit-keyframes fade {
-    from {opacity: 0.0} 
-    to {opacity: 1.0}
+  /* The dropdown container */
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+
+  /* Dropdown button */
+  .dropbtn {
+    font-size: 16px; 
+    border: none;
+    outline: none;
+    color: white;
+    padding: 16px;
+    height:75px;
+    background-color:transparent;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
   }
   
-  @keyframes fade {
-    from {opacity: 0.0} 
-    to {opacity: 1.0}
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    opacity:0.7;
+    width:100%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+    /* Show the dropdown menu on hover
+    .dropdown:hover .dropdown-content {
+    display: block;    
+  }*/
+
+  .dropdown-show {
+    display: block;    
+  }
+
+  .search {
+    background: inherit;
+    padding:10px;
+    margin:10px;
+    border:none;
+    border-bottom: 2px solid red;
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    width:95%;
+  }
+    
+  #text{
+    position: absolute;
+    width:250px;
+    background: rgba(51,51,51,0.6);
+    bottom: 1%;
+    left: 1%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    color: white;
+    transform: translate(-50%-50%);
+    -ms-transform: translate(-50%,-50%);
+    overflow-wrap: break-word;
   }
