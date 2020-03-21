@@ -2,7 +2,9 @@
     $destination = filter_input(INPUT_GET, 'dest', FILTER_SANITIZE_URL);
     $imageArray = glob("images/".$destination."/*.{jpg,png}", GLOB_BRACE);
     if (!$imageArray) {
-        $imageArray = glob("images/NotFound/NotFound.JPG", GLOB_BRACE);
+        // Redirect browser 
+        header("Location: /search.php"); 
+        exit; 
     }
 ?>
 
@@ -16,30 +18,24 @@
                 echo "</div>";
             }
         ?>
-        
-        <div class="strip">
-            <?php 
-                for ($x = 0; $x <= 0; $x++) {
-                    echo "<div class='dest_$x'>";
-                    echo "<div class='dest_img'>";
-                    echo "<img src=$imageArray[$x]>";
-                    echo "</div>";
-                    echo "</div>";
-                } 
-            ?>
-        </div>
-        <div class="flex">
-            <?php 
-               for ($x = 0; $x <= 0; $x++) {
-                    echo "<div class='dest_$x'>";
-                    echo "<div class='dest_img'>";
-                    echo "<img src=$imageArray[$x]>";
-                    echo "</div>";
-                    echo "</div>";
-                }      
-            ?>
-        </div>
     </div>
-    
+    <div class="flex">
+        <?php 
+            for ($x = 0; $x < count($imageArray); $x++) {
+                echo "<div class='dest'>";
+                echo "<div class='dest_img'>";
+                echo "<img src=$imageArray[$x]>";
+                echo "</div>";
+                echo "<div>";
+                echo "<h2>";
+                $fileName = basename($imageArray[$x],".jpg");
+                echo preg_replace('~\d~','',$fileName);
+                echo "</h2>";
+                echo "</div>";
+                echo "</div>";
+            }      
+        ?>
+    </div>
+
 <?php require_once 'site-header.php';?>
 <?php require_once 'footer.php';?>

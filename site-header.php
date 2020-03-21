@@ -8,8 +8,8 @@
                     </form>
                 </div>
             </div> 
-            <div class="bigTitle">Colombo</div>
-            <div class="smallTitle">---</div>
+            <div class="bigTitle">travelerpic</div>
+            <div class="smallTitle">Ayoubowan</div>
             <a href="/index.php">Home</a>
         </div>
     </div>
